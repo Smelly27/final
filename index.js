@@ -43,13 +43,36 @@ function deleteTrip(trips, index) {
 }
 
 function recommendDestination(dish) {
+  if (!dish) return "Select a dish";
+
   const map = {
-    sushi: "Japan",
+    pasta: "Italy",
     pizza: "Italy",
-    tacos: "Mexico"
+    sushi: "Japan",
+    ramen: "Japan",
+    tacos: "Mexico",
+    burritos: "Mexico",
+    croissant: "France",
+    baguette: "France",
+    paella: "Spain",
+    bratwurst: "Germany",
+    curry: "India",
+    pho: "Vietnam",
+    padthai: "Thailand",
+    kebab: "Turkey",
+    fishandchips: "United Kingdom",
+    pierogi: "Poland",
+    gnocchi: "Italy",
+    falafel: "Israel",
+    shawarma: "Lebanon",
+    bibimbap: "South Korea",
+    dumplings: "China",
+    poutine: "Canada"
   };
-  return map[dish] || "Explore the world";
+
+  return map[dish.toLowerCase().replace(/\s/g, "")] || "Select a dish";
 }
+
 
 
 module.exports = {
