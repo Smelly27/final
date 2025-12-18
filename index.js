@@ -26,13 +26,36 @@ app.post('/itinerary', (req, res) => {
 });
 
 // Run the server
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
+if (require.main === module) {
+  app.listen(3000, () => {
+    console.log("Server running on http://localhost:3000");
+  });
+}
+
+function addTrip(trips, trip) {
+  trips.push(trip);
+  return trips;
+}
+
+function deleteTrip(trips, index) {
+  trips.splice(index, 1);
+  return trips;
+}
+
+function recommendDestination(dish) {
+  const map = {
+    sushi: "Japan",
+    pizza: "Italy",
+    tacos: "Mexico"
+  };
+  return map[dish] || "Explore the world";
+}
+
 
 module.exports = {
   addTrip,
   deleteTrip,
-  recommendDestination
+  recommendDestination,
+  app
 };
 
