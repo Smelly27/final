@@ -26,3 +26,5 @@ Planning international travel involves managing destinations, dates, currencies,
 - Infrastructure defined programmatically
 
 This project was built to demonstrate full-stack DevOps principles in a real-world scenario.
+
+Update made on a feature branch to demo pull req workflow
